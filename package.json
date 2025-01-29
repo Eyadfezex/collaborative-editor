@@ -10,9 +10,16 @@
     "tailwind-config-viewer": "tailwind-config-viewer -o"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.10.3",
+    "@clerk/themes": "^2.2.13",
+    "@lexical/react": "^0.23.1",
+    "@lexical/rich-text": "^0.23.1",
+    "@lexical/selection": "^0.23.1",
+    "@lexical/utils": "^0.23.1",
     "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lexical": "^0.23.1",
     "lucide-react": "^0.474.0",
     "next": "15.1.6",
     "react": "^19.0.0",
