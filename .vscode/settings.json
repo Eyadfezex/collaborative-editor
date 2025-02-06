@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Liveblocks"]
+  "cSpell.words": ["Liveblocks"],
+  "bitoAI.codeCompletion.enableAutoCompletion": false
 }

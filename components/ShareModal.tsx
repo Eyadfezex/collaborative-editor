@@ -38,13 +38,14 @@ const ShareModal = ({
     });
     setLoading(false);
   };
+
+  if (currentUserType !== "editor") {
+    return null;
+  }
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger type="reset">
-        <button
-          className="gradient-blue flex h-9 gap-1 px-4 rounded-md items-center"
-          disabled={currentUserType !== "editor"}
-        >
+        <div className="gradient-blue flex h-9 gap-1 px-4 rounded-md items-center">
           <Image
             src="/assets/icons/share.svg"
             alt="share"
@@ -53,7 +54,7 @@ const ShareModal = ({
             className="min-w-4 md:size-5"
           />
           <p className="mr-1 hidden sm:block">Share</p>
-        </button>
+        </div>
       </DialogTrigger>
       <DialogContent className="shad-dialog">
         <DialogHeader>
