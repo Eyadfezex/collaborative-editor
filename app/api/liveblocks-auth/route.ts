@@ -18,7 +18,7 @@ import { redirect } from "next/navigation";
  * // Example POST request to this endpoint
  * fetch("/api/identify-user", { method: "POST" });
  */
-export async function POST(request: Request) {
+export async function POST() {
   // Fetch the current authenticated user from Clerk
   const clerkUser = await currentUser();
 
