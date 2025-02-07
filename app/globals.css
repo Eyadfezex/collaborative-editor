@@ -77,7 +77,7 @@
   }
 
   .floating-toolbar {
-    @apply flex w-full min-w-max items-center justify-center gap-2 rounded-lg bg-dark-350 p-1.5 shadow-xl;
+    @apply flex w-full min-w-max !text-white items-center justify-center gap-2 rounded-lg bg-dark-350 p-1.5 shadow-xl;
   }
 
   .floating-toolbar-btn {
@@ -223,6 +223,7 @@
 
 .lb-button {
   --lb-foreground-moderate: #fff;
+  color: white;
 }
 
 .lb-button:where([data-variant="primary"]) {
