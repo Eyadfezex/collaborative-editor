@@ -1,5 +1,5 @@
 import { liveblocks } from "@/lib/liveblocks";
-import { getRandomColor } from "@/lib/utils";
+import { getUserColor } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
@@ -39,7 +39,7 @@ export async function POST() {
       name: `${firstName} ${lastName}`,
       email: emailAddresses[0].emailAddress, // Use the first email address
       avatar: imageUrl,
-      color: getRandomColor(), // Assign a random color for the user
+      color: getUserColor(id), // Assign a random color for the user
     },
   };
 
