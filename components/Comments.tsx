@@ -1,19 +1,22 @@
-import React from "react";
-import { Composer, Thread } from "@liveblocks/react-ui";
-import { useThreads } from "@liveblocks/react";
-import { useIsThreadActive } from "@liveblocks/react-lexical";
+"use client";
 import { cn } from "@/lib/utils";
+import { useIsThreadActive } from "@liveblocks/react-lexical";
+import { Composer, Thread } from "@liveblocks/react-ui";
+import { ThreadData } from "@liveblocks/client";
+import { useThreads } from "@liveblocks/react/suspense";
+import React from "react";
 
-const ThreadWrapper = ({ thread }: ThreadWrapperProps) => {
+const ThreadWrapper = ({ thread }: { thread: ThreadData }) => {
   const isActive = useIsThreadActive(thread.id);
+
   return (
     <Thread
       thread={thread}
       data-state={isActive ? "active" : null}
       className={cn(
-        "comment=thread border",
+        "comment-thread border",
         isActive && "!border-blue-500 shadow-md",
-        thread.resolve && "opacity-40"
+        thread.resolved && "opacity-40"
       )}
     />
   );
@@ -25,7 +28,8 @@ const Comments = () => {
   return (
     <div className="comments-container">
       <Composer className="comment-composer" />
-      {threads?.map((thread) => (
+
+      {threads.map((thread) => (
         <ThreadWrapper key={thread.id} thread={thread} />
       ))}
     </div>

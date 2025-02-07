@@ -40,13 +40,12 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="min-w-9 rounded-full bg-transparent p-2 transition-all">
+        <Button className="min-w-10 min-h-10  rounded-full bg-transparent p-2 transition-all">
           <Image
             src="/assets/icons/delete.svg"
             alt="delete"
             width={20}
             height={20}
-            className="mt-1"
           />
         </Button>
       </DialogTrigger>
