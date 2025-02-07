@@ -5,18 +5,16 @@ import {
   LiveblocksProvider,
 } from "@liveblocks/react/suspense";
 import Loader from "@/components/Loader";
-import {
-  getClerkUsersWithIds,
-  getDocumentUsers,
-} from "@/lib/actions/user.actions";
+import { getClerkUsers, getDocumentUsers } from "@/lib/actions/user.actions";
 import { useUser } from "@clerk/nextjs";
 const Provider = ({ children }: { children: ReactNode }) => {
   const { user: ClerkUser } = useUser();
+
   return (
     <LiveblocksProvider
       authEndpoint="/api/liveblocks-auth"
       resolveUsers={async ({ userIds }) => {
-        const users = await getClerkUsersWithIds({ userIds });
+        const users = await getClerkUsers({ userIds });
         return users;
       }}
       resolveMentionSuggestions={async ({ text, roomId }) => {

@@ -28,6 +28,7 @@ const Home = async () => {
   const roomDocuments = await getDocuments({
     email: clerkUser?.emailAddresses[0].emailAddress,
   });
+
   return (
     <main className="home-container">
       <Header className="sticky left-0 top-0">
